@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>E-commerce Conversion Analysis</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <div class="page-wrapper">
+
+
+        <!-- ===================================================== -->
+        <!-- NAVIGATION -->
+        <!-- ===================================================== -->
+
+        <header class="topbar">
+
+            <div class="brand">
+
+                <div class="brand-mark">
+                    EC
+                </div>
+
+                <div>
+
+                    <div class="brand-name">
+                        EcomConversionAI
+                    </div>
+
+                    <div class="brand-subtitle">
+                        E-commerce Intelligence
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <nav class="navigation">
+
+                <a href="/" class="nav-link active">
+                    Analyze
+                </a>
+
+                <a href="/model-performance" class="nav-link">
+                    Model Performance
+                </a>
+
+                <a href="/about" class="nav-link">
+                    About
+                </a>
+
+                <button id="themeToggle" class="theme-toggle" type="button">
+                    ☀
+                </button>
+
+            </nav>
+
+        </header>
+
+
+
+        <!-- ===================================================== -->
+        <!-- MAIN -->
+        <!-- ===================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- ================================================= -->
+            <!-- HERO -->
+            <!-- ================================================= -->
+
+            <section class="hero-section">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        MACHINE LEARNING • EXPLAINABLE AI
+                    </div>
+
+
+                    <h1>
+                        Understand visitor
+                        <span>purchase intent.</span>
+                    </h1>
+
+
+                    <p class="hero-description">
+
+                        Analyze online shopping sessions and estimate
+                        the probability of conversion using a Random
+                        Forest machine learning model with SHAP-based
+                        explanations.
+
+                    </p>
+
+
+                    <div class="hero-highlights">
+
+                        <div class="hero-highlight">
+
+                            <strong>
+                                90.66%
+                            </strong>
+
+                            <span>
+                                Accuracy
+                            </span>
+
+                        </div>
+
+
+                        <div class="hero-highlight">
+
+                            <strong>
+                                92.57%
+                            </strong>
+
+                            <span>
+                                ROC-AUC
+                            </span>
+
+                        </div>
+
+
+                        <div class="hero-highlight">
+
+                            <strong>
+                                SHAP
+                            </strong>
+
+                            <span>
+                                Explainable AI
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="hero-card">
+
+                    <div class="hero-card-header">
+
+                        <span class="status-dot"></span>
+
+                        <span>
+                            SESSION INSIGHT
+                        </span>
+
+                    </div>
+
+
+                    <div class="hero-card-title">
+                        Predict purchase intent
+                    </div>
+
+
+                    <div class="hero-card-text">
+                        Analyze visitor behavior, estimate purchase probability,
+                        and understand the factors influencing the prediction.
+                    </div>
+
+
+                    <div class="hero-card-divider"></div>
+
+
+                    <div class="hero-card-stat">
+
+                        <span>
+                            Prediction
+                        </span>
+
+                        <strong>
+                            Probability
+                        </strong>
+
+                    </div>
+
+
+                    <div class="hero-card-stat">
+
+                        <span>
+                            Explanation
+                        </span>
+
+                        <strong>
+                            SHAP
+                        </strong>
+
+                    </div>
+
+
+                    <div class="hero-card-stat">
+
+                        <span>
+                            Outcome
+                        </span>
+
+                        <strong>
+                            Actionable
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================================================= -->
+            <!-- FORM -->
+            <!-- ================================================= -->
+
+            <section class="form-section">
+
+
+                <div class="form-heading">
+
+                    <div>
+
+                        <div class="section-eyebrow">
+                            SESSION ANALYSIS
+                        </div>
+
+                        <h2>
+                            Enter visitor session data
+                        </h2>
+
+                        <p>
+                            Provide the visitor's browsing and session
+                            information to generate a purchase-intent prediction.
+                        </p>
+
+                    </div>
+
+
+                    <div class="required-note">
+                        17 model inputs
+                    </div>
+
+                </div>
+
+
+
+                <form action="/predict" method="POST" class="prediction-form">
+
+
+                    <!-- ================================================= -->
+                    <!-- SECTION 01 -->
+                    <!-- ================================================= -->
+
+                    <div class="form-group-section">
+
+                        <div class="form-group-heading">
+
+                            <div class="form-group-number">
+                                01
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Website Browsing
+                                </h3>
+
+                                <p>
+                                    Pages visited and time spent browsing.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="form-grid">
+
+
+                            <!-- Administrative Pages -->
+
+                            <div class="input-group">
+
+                                <label for="Administrative">
+                                    Administrative Pages
+                                </label>
+
+                                <input type="number" id="Administrative" name="Administrative" min="0" step="1"
+                                    placeholder="e.g. 2" required>
+
+                            </div>
+
+
+                            <!-- Administrative Duration -->
+
+                            <div class="input-group">
+
+                                <label for="Administrative_Duration">
+                                    Administrative Duration
+                                </label>
+
+                                <input type="number" id="Administrative_Duration" name="Administrative_Duration" min="0"
+                                    step="0.01" placeholder="e.g. 120" required>
+
+                                <span class="input-hint">
+                                    Seconds
+                                </span>
+
+                            </div>
+
+
+                            <!-- Informational Pages -->
+
+                            <div class="input-group">
+
+                                <label for="Informational">
+                                    Informational Pages
+                                </label>
+
+                                <input type="number" id="Informational" name="Informational" min="0" step="1"
+                                    placeholder="e.g. 1" required>
+
+                            </div>
+
+
+                            <!-- Informational Duration -->
+
+                            <div class="input-group">
+
+                                <label for="Informational_Duration">
+                                    Informational Duration
+                                </label>
+
+                                <input type="number" id="Informational_Duration" name="Informational_Duration" min="0"
+                                    step="0.01" placeholder="e.g. 60" required>
+
+                                <span class="input-hint">
+                                    Seconds
+                                </span>
+
+                            </div>
+
+
+                            <!-- Product Pages -->
+
+                            <div class="input-group">
+
+                                <label for="ProductRelated">
+                                    Product-Related Pages
+                                </label>
+
+                                <input type="number" id="ProductRelated" name="ProductRelated" min="0" step="1"
+                                    placeholder="e.g. 25" required>
+
+                            </div>
+
+
+                            <!-- Product Duration -->
+
+                            <div class="input-group">
+
+                                <label for="ProductRelated_Duration">
+                                    Product-Related Duration
+                                </label>
+
+                                <input type="number" id="ProductRelated_Duration" name="ProductRelated_Duration" min="0"
+                                    step="0.01" placeholder="e.g. 900" required>
+
+                                <span class="input-hint">
+                                    Seconds
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ================================================= -->
+                    <!-- SECTION 02 -->
+                    <!-- ================================================= -->
+
+                    <div class="form-group-section">
+
+                        <div class="form-group-heading">
+
+                            <div class="form-group-number">
+                                02
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Engagement & Conversion
+                                </h3>
+
+                                <p>
+                                    Signals that describe visitor engagement and conversion value.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="form-grid">
+
+
+                            <!-- Bounce Rate -->
+
+                            <div class="input-group">
+
+                                <label for="BounceRates">
+                                    Bounce Rate
+                                </label>
+
+                                <input type="number" id="BounceRates" name="BounceRates" min="0" max="1" step="0.0001"
+                                    placeholder="e.g. 0.01" required>
+
+                                <span class="input-hint">
+                                    Value between 0 and 1
+                                </span>
+
+                            </div>
+
+
+                            <!-- Exit Rate -->
+
+                            <div class="input-group">
+
+                                <label for="ExitRates">
+                                    Exit Rate
+                                </label>
+
+                                <input type="number" id="ExitRates" name="ExitRates" min="0" max="1" step="0.0001"
+                                    placeholder="e.g. 0.03" required>
+
+                                <span class="input-hint">
+                                    Value between 0 and 1
+                                </span>
+
+                            </div>
+
+
+                            <!-- Page Value -->
+
+                            <div class="input-group">
+
+                                <label for="PageValues">
+                                    Page Value
+                                </label>
+
+                                <input type="number" id="PageValues" name="PageValues" min="0" step="0.01"
+                                    placeholder="e.g. 5.50" required>
+
+                            </div>
+
+
+                            <!-- Special Day -->
+
+                            <div class="input-group">
+
+                                <label for="SpecialDay">
+                                    Special Day
+                                </label>
+
+                                <input type="number" id="SpecialDay" name="SpecialDay" min="0" max="1" step="0.01"
+                                    placeholder="e.g. 0" required>
+
+                                <span class="input-hint">
+                                    Value between 0 and 1
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ================================================= -->
+                    <!-- SECTION 03 -->
+                    <!-- ================================================= -->
+
+                    <div class="form-group-section">
+
+                        <div class="form-group-heading">
+
+                            <div class="form-group-number">
+                                03
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Visitor & Session
+                                </h3>
+
+                                <p>
+                                    Basic information about the visitor and session timing.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="form-grid">
+
+
+                            <!-- Month -->
+
+                            <div class="input-group">
+
+                                <label for="Month">
+                                    Month
+                                </label>
+
+                                <select id="Month" name="Month" required>
+
+                                    <option value="">
+                                        Select month
+                                    </option>
+
+                                    <option value="Jan">
+                                        January
+                                    </option>
+
+                                    <option value="Feb">
+                                        February
+                                    </option>
+
+                                    <option value="Mar">
+                                        March
+                                    </option>
+
+                                    <option value="Apr">
+                                        April
+                                    </option>
+
+                                    <option value="May">
+                                        May
+                                    </option>
+
+                                    <option value="June">
+                                        June
+                                    </option>
+
+                                    <option value="Jul">
+                                        July
+                                    </option>
+
+                                    <option value="Aug">
+                                        August
+                                    </option>
+
+                                    <option value="Sep">
+                                        September
+                                    </option>
+
+                                    <option value="Oct">
+                                        October
+                                    </option>
+
+                                    <option value="Nov">
+                                        November
+                                    </option>
+
+                                    <option value="Dec">
+                                        December
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Visitor Type -->
+
+                            <div class="input-group">
+
+                                <label for="VisitorType">
+                                    Visitor Type
+                                </label>
+
+                                <select id="VisitorType" name="VisitorType" required>
+
+                                    <option value="">
+                                        Select visitor type
+                                    </option>
+
+                                    <option value="Returning_Visitor">
+                                        Returning Visitor
+                                    </option>
+
+                                    <option value="New_Visitor">
+                                        New Visitor
+                                    </option>
+
+                                    <option value="Other">
+                                        Other
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Weekend -->
+
+                            <div class="input-group">
+
+                                <label for="Weekend">
+                                    Weekend Session
+                                </label>
+
+                                <select id="Weekend" name="Weekend" required>
+
+                                    <option value="">
+                                        Select option
+                                    </option>
+
+                                    <option value="True">
+                                        Yes
+                                    </option>
+
+                                    <option value="False">
+                                        No
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ================================================= -->
+                    <!-- SECTION 04 -->
+                    <!-- ================================================= -->
+
+                    <div class="form-group-section">
+
+                        <div class="form-group-heading">
+
+                            <div class="form-group-number">
+                                04
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Technical & Traffic
+                                </h3>
+
+                                <p>
+                                    Technical environment and traffic source information.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="form-grid">
+
+
+                            <!-- Operating System -->
+
+                            <div class="input-group">
+
+                                <label for="OperatingSystems">
+                                    Operating System
+                                </label>
+
+                                <input type="number" id="OperatingSystems" name="OperatingSystems" min="1" step="1"
+                                    placeholder="e.g. 2" required>
+
+                            </div>
+
+
+                            <!-- Browser -->
+
+                            <div class="input-group">
+
+                                <label for="Browser">
+                                    Browser
+                                </label>
+
+                                <input type="number" id="Browser" name="Browser" min="1" step="1" placeholder="e.g. 2"
+                                    required>
+
+                            </div>
+
+
+                            <!-- Region -->
+
+                            <div class="input-group">
+
+                                <label for="Region">
+                                    Region
+                                </label>
+
+                                <input type="number" id="Region" name="Region" min="1" step="1" placeholder="e.g. 1"
+                                    required>
+
+                            </div>
+
+
+                            <!-- Traffic Type -->
+
+                            <div class="input-group">
+
+                                <label for="TrafficType">
+                                    Traffic Type
+                                </label>
+
+                                <input type="number" id="TrafficType" name="TrafficType" min="1" step="1"
+                                    placeholder="e.g. 2" required>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ================================================= -->
+                    <!-- SUBMIT -->
+                    <!-- ================================================= -->
+
+                    <div class="form-submit">
+
+                        <div class="submit-info">
+
+                            <div>
+
+                                <strong>
+                                    Ready to analyze
+                                </strong>
+
+                                <p>
+                                    Generate a purchase-intent prediction
+                                    and view the factors influencing the result.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <button type="submit" class="predict-button">
+
+                            Analyze Purchase Intent
+
+                            <span>
+                                →
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </section>
+
+
+
+            <!-- ================================================= -->
+            <!-- HOW IT WORKS -->
+            <!-- ================================================= -->
+
+            <section class="how-section">
+
+                <div class="section-eyebrow">
+                    HOW IT WORKS
+                </div>
+
+                <h2>
+                    From session data to actionable insight
+                </h2>
+
+
+                <div class="how-grid">
+
+
+                    <div class="how-card">
+
+                        <div class="how-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Analyze
+                        </h3>
+
+                        <p>
+                            Enter the visitor's browsing and
+                            behavioral session information.
+                        </p>
+
+                    </div>
+
+
+                    <div class="how-card">
+
+                        <div class="how-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Predict
+                        </h3>
+
+                        <p>
+                            The Random Forest model estimates
+                            the visitor's purchase probability.
+                        </p>
+
+                    </div>
+
+
+                    <div class="how-card">
+
+                        <div class="how-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Explain
+                        </h3>
+
+                        <p>
+                            SHAP identifies the strongest factors
+                            influencing the individual prediction.
+                        </p>
+
+                    </div>
+
+
+                    <div class="how-card">
+
+                        <div class="how-number">
+                            04
+                        </div>
+
+                        <h3>
+                            Act
+                        </h3>
+
+                        <p>
+                            Business recommendations suggest
+                            potential actions based on the session.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- ===================================================== -->
+        <!-- FOOTER -->
+        <!-- ===================================================== -->
+
+        <footer class="footer">
+
+            <div>
+                E-commerce Conversion Analysis
+            </div>
+
+            <div>
+                Machine Learning • Flask • SHAP
+            </div>
+
+        </footer>
+
+
+
+
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById("themeToggle");
+
+        function updateThemeButton() {
+            if (document.body.classList.contains("light-mode")) {
+                themeToggle.textContent = "☾";
+            } else {
+                themeToggle.textContent = "☀";
+            }
+        }
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme === "light") {
+            document.body.classList.add("light-mode");
+        } else {
+            document.body.classList.remove("light-mode");
+        }
+
+        // Update button icon
+        updateThemeButton();
+
+        // Toggle theme
+        themeToggle.addEventListener("click", function () {
+
+            document.body.classList.toggle("light-mode");
+
+            if (document.body.classList.contains("light-mode")) {
+                localStorage.setItem("theme", "light");
+            } else {
+                localStorage.setItem("theme", "dark");
+            }
+
+            updateThemeButton();
+        });
+    </script>
+
+</body>
+
+</html>
