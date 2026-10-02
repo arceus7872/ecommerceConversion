@@ -1,1 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Model Performance | E-commerce Conversion Analysis</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body class="model-page">
+
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+        ☀
+    </button>
+
+
+    <div class="model-wrapper">
+
+
+        <!-- =========================================
+         HEADER
+    ========================================== -->
+
+        <header class="model-top">
+
+            <div class="model-kicker">
+                ECOMMERCE CONVERSION ANALYSIS
+            </div>
+
+            <h1>
+                Model Performance
+            </h1>
+
+            <p>
+                Final Random Forest model evaluation
+            </p>
+
+        </header>
+
+
+
+        <!-- =========================================
+         MAIN
+    ========================================== -->
+
+        <main class="model-content">
+
+
+            <!-- =========================================
+             PERFORMANCE OVERVIEW
+        ========================================== -->
+
+            <section class="model-section">
+
+                <div class="model-section-header">
+
+                    <div>
+
+                        <span class="model-section-number">
+                            01
+                        </span>
+
+                        <h2>
+                            Performance Overview
+                        </h2>
+
+                        <p>
+                            Evaluation results on the held-out test dataset.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="performance-grid">
+
+
+                    <!-- ACCURACY -->
+
+                    <div class="performance-card featured">
+
+                        <span class="performance-label">
+                            Accuracy
+                        </span>
+
+                        <strong class="performance-value">
+                            90.66%
+                        </strong>
+
+                        <span class="performance-description">
+                            Overall correct predictions
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- ROC AUC -->
+
+                    <div class="performance-card featured">
+
+                        <span class="performance-label">
+                            ROC-AUC
+                        </span>
+
+                        <strong class="performance-value">
+                            92.57%
+                        </strong>
+
+                        <span class="performance-description">
+                            Class discrimination ability
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- PRECISION -->
+
+                    <div class="performance-card">
+
+                        <span class="performance-label">
+                            Purchase Precision
+                        </span>
+
+                        <strong class="performance-value small">
+                            78%
+                        </strong>
+
+                        <span class="performance-description">
+                            Correct positive predictions
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- RECALL -->
+
+                    <div class="performance-card">
+
+                        <span class="performance-label">
+                            Purchase Recall
+                        </span>
+
+                        <strong class="performance-value small">
+                            57%
+                        </strong>
+
+                        <span class="performance-description">
+                            Purchasing sessions detected
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- F1 -->
+
+                    <div class="performance-card">
+
+                        <span class="performance-label">
+                            Purchase F1
+                        </span>
+
+                        <strong class="performance-value small">
+                            65%
+                        </strong>
+
+                        <span class="performance-description">
+                            Precision-recall balance
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- DATASET -->
+
+                    <div class="performance-card">
+
+                        <span class="performance-label">
+                            Dataset Samples
+                        </span>
+
+                        <strong class="performance-value small">
+                            12,205
+                        </strong>
+
+                        <span class="performance-description">
+                            Samples after preprocessing
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- TRAINING -->
+
+                    <div class="performance-card">
+
+                        <span class="performance-label">
+                            Training Samples
+                        </span>
+
+                        <strong class="performance-value small">
+                            9,764
+                        </strong>
+
+                        <span class="performance-description">
+                            Used to train the model
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- TEST -->
+
+                    <div class="performance-card">
+
+                        <span class="performance-label">
+                            Test Samples
+                        </span>
+
+                        <strong class="performance-value small">
+                            2,441
+                        </strong>
+
+                        <span class="performance-description">
+                            Held-out evaluation data
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+             FINAL MODEL
+        ========================================== -->
+
+            <section class="model-section">
+
+                <div class="model-section-header">
+
+                    <div>
+
+                        <span class="model-section-number">
+                            02
+                        </span>
+
+                        <h2>
+                            Final Model
+                        </h2>
+
+                        <p>
+                            Architecture and preprocessing pipeline.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="technical-card">
+
+                    <div class="technical-header">
+
+                        <span class="technical-status">
+                            ● FINAL MODEL
+                        </span>
+
+                        <span class="technical-name">
+                            Random Forest Classifier
+                        </span>
+
+                    </div>
+
+
+                    <div class="technical-divider"></div>
+
+
+                    <div class="technical-grid">
+
+
+                        <div>
+
+                            <span>
+                                Algorithm
+                            </span>
+
+                            <strong>
+                                Random Forest
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Estimators
+                            </span>
+
+                            <strong>
+                                300 Trees
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Numerical Processing
+                            </span>
+
+                            <strong>
+                                StandardScaler
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Categorical Processing
+                            </span>
+
+                            <strong>
+                                OneHotEncoder
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="technical-description">
+
+                        The preprocessing pipeline was implemented using
+                        a ColumnTransformer. Numerical features were
+                        standardized using StandardScaler, while categorical
+                        features were transformed using OneHotEncoder.
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+             HYPERPARAMETER TUNING
+        ========================================== -->
+
+            <section class="model-section">
+
+                <div class="model-section-header">
+
+                    <div>
+
+                        <span class="model-section-number">
+                            03
+                        </span>
+
+                        <h2>
+                            Hyperparameter Tuning
+                        </h2>
+
+                        <p>
+                            GridSearchCV was used to determine the final
+                            Random Forest configuration.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="parameter-table">
+
+
+                    <div class="parameter-row">
+
+                        <span>
+                            n_estimators
+                        </span>
+
+                        <strong>
+                            300
+                        </strong>
+
+                    </div>
+
+
+                    <div class="parameter-row">
+
+                        <span>
+                            max_depth
+                        </span>
+
+                        <strong>
+                            None
+                        </strong>
+
+                    </div>
+
+
+                    <div class="parameter-row">
+
+                        <span>
+                            min_samples_split
+                        </span>
+
+                        <strong>
+                            2
+                        </strong>
+
+                    </div>
+
+
+                    <div class="parameter-row">
+
+                        <span>
+                            min_samples_leaf
+                        </span>
+
+                        <strong>
+                            1
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+             INTERPRETATION
+        ========================================== -->
+
+            <section class="model-section interpretation-section">
+
+                <div class="model-section-header">
+
+                    <div>
+
+                        <span class="model-section-number">
+                            04
+                        </span>
+
+                        <h2>
+                            Interpretation
+                        </h2>
+
+                        <p>
+                            What the evaluation metrics tell us.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="interpretation-card">
+
+                    <div class="interpretation-mark">
+                        “
+                    </div>
+
+                    <p>
+
+                        The ROC-AUC score of <strong>92.57%</strong>
+                        indicates strong discrimination between
+                        purchasing and non-purchasing sessions.
+
+                        However, the purchase class has lower recall
+                        than the non-purchase class. This reflects the
+                        difficulty of detecting all purchasing sessions
+                        in the imbalanced dataset.
+
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+             BACK BUTTON
+        ========================================== -->
+
+            <div class="model-actions">
+
+                <a href="/" class="model-back-button">
+                    ← Back to Prediction
+                </a>
+
+            </div>
+
+
+        </main>
+
+
+
+        <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+        <footer class="model-footer">
+
+            <span>
+                E-commerce Conversion Analysis
+            </span>
+
+            <span>
+                Random Forest • SHAP • Flask
+            </span>
+
+        </footer>
+
+
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById("themeToggle");
+
+        function updateThemeButton() {
+            if (document.body.classList.contains("light-mode")) {
+                themeToggle.textContent = "☾";
+            } else {
+                themeToggle.textContent = "☀";
+            }
+        }
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme === "light") {
+            document.body.classList.add("light-mode");
+        } else {
+            document.body.classList.remove("light-mode");
+        }
+
+        // Update button icon
+        updateThemeButton();
+
+        // Toggle theme
+        themeToggle.addEventListener("click", function () {
+
+            document.body.classList.toggle("light-mode");
+
+            if (document.body.classList.contains("light-mode")) {
+                localStorage.setItem("theme", "light");
+            } else {
+                localStorage.setItem("theme", "dark");
+            }
+
+            updateThemeButton();
+        });
+    </script>
+
+
+</body>
+
+</html>
