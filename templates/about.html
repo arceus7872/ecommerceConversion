@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Project | Ecommerce Conversion Analysis</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+
+<body>
+
+    <div class="about-page">
+
+        <div class="about-container">
+
+            <div class="about-card">
+
+
+                <!-- ========================================= -->
+                <!-- HEADER -->
+                <!-- ========================================= -->
+
+                <header class="about-header">
+
+                    <button class="theme-toggle" id="themeToggle" type="button">
+                        ☀
+                    </button>
+
+                    <span class="about-eyebrow">
+                        ECOMMERCE CONVERSION ANALYSIS
+                    </span>
+
+                    <h1>
+                        About the Project
+                    </h1>
+
+                    <p>
+                        Machine learning powered visitor conversion analysis
+                        designed to turn browsing behavior into actionable insights.
+                    </p>
+
+                </header>
+
+
+                <!-- ========================================= -->
+                <!-- PROJECT OVERVIEW -->
+                <!-- ========================================= -->
+
+                <section class="about-section">
+
+                    <div class="about-section-heading">
+
+                        <span class="about-section-number">
+                            01
+                        </span>
+
+                        <div>
+                            <h2>
+                                Problem Statement
+                            </h2>
+
+                            <p>
+                                Understanding whether a visitor is likely to purchase
+                                before the session ends.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-content-box">
+
+                        <p>
+                            This project predicts whether an online shopping session
+                            is likely to result in a purchase based on visitor behavior
+                            and session-level attributes.
+                        </p>
+
+                        <p>
+                            Instead of simply providing a binary prediction, the
+                            application estimates the visitor's purchase probability,
+                            analyzes behavioral signals, explains the prediction,
+                            and suggests possible business actions.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ========================================= -->
+                <!-- ML APPROACH -->
+                <!-- ========================================= -->
+
+                <section class="about-section">
+
+                    <div class="about-section-heading">
+
+                        <span class="about-section-number">
+                            02
+                        </span>
+
+                        <div>
+                            <h2>
+                                Machine Learning Approach
+                            </h2>
+
+                            <p>
+                                The prediction pipeline combines preprocessing,
+                                classification, and explainable AI.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-process-grid">
+
+
+                        <div class="about-process-card">
+
+                            <span class="process-number">
+                                01
+                            </span>
+
+                            <h3>
+                                Data Preparation
+                            </h3>
+
+                            <p>
+                                The dataset is cleaned and duplicate records are
+                                removed before model training.
+                            </p>
+
+                        </div>
+
+
+                        <div class="about-process-card">
+
+                            <span class="process-number">
+                                02
+                            </span>
+
+                            <h3>
+                                Feature Processing
+                            </h3>
+
+                            <p>
+                                Numerical features are scaled and categorical
+                                variables are converted using one-hot encoding.
+                            </p>
+
+                        </div>
+
+
+                        <div class="about-process-card">
+
+                            <span class="process-number">
+                                03
+                            </span>
+
+                            <h3>
+                                Random Forest
+                            </h3>
+
+                            <p>
+                                A Random Forest classifier is used to estimate
+                                the probability of a visitor making a purchase.
+                            </p>
+
+                        </div>
+
+
+                        <div class="about-process-card">
+
+                            <span class="process-number">
+                                04
+                            </span>
+
+                            <h3>
+                                SHAP Explanation
+                            </h3>
+
+                            <p>
+                                SHAP identifies the features that contributed
+                                positively or negatively to each prediction.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ========================================= -->
+                <!-- SHAP -->
+                <!-- ========================================= -->
+
+                <section class="about-section">
+
+                    <div class="about-section-heading">
+
+                        <span class="about-section-number">
+                            03
+                        </span>
+
+                        <div>
+                            <h2>
+                                Why SHAP?
+                            </h2>
+
+                            <p>
+                                Making individual machine learning predictions
+                                easier to understand.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-highlight-box">
+
+                        <div class="about-highlight-icon">
+                            ✦
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                From prediction to explanation
+                            </h3>
+
+                            <p>
+                                A purchase probability alone does not explain
+                                why the model reached its conclusion. SHAP helps
+                                identify which individual features pushed the
+                                prediction toward or away from the purchase class.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ========================================= -->
+                <!-- REAL WORLD USE -->
+                <!-- ========================================= -->
+
+                <section class="about-section">
+
+                    <div class="about-section-heading">
+
+                        <span class="about-section-number">
+                            04
+                        </span>
+
+                        <div>
+                            <h2>
+                                Real-World Use
+                            </h2>
+
+                            <p>
+                                Turning prediction results into potential
+                                ecommerce actions.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-use-grid">
+
+
+                        <div class="about-use-card">
+
+                            <span>
+                                ◈
+                            </span>
+
+                            <h3>
+                                Personalization
+                            </h3>
+
+                            <p>
+                                Prioritize personalized experiences for visitors
+                                showing stronger purchase signals.
+                            </p>
+
+                        </div>
+
+
+                        <div class="about-use-card">
+
+                            <span>
+                                ◈
+                            </span>
+
+                            <h3>
+                                Product Recommendations
+                            </h3>
+
+                            <p>
+                                Recommend relevant products based on the visitor's
+                                browsing behavior.
+                            </p>
+
+                        </div>
+
+
+                        <div class="about-use-card">
+
+                            <span>
+                                ◈
+                            </span>
+
+                            <h3>
+                                Engagement Strategy
+                            </h3>
+
+                            <p>
+                                Identify sessions where engagement could be
+                                improved before applying aggressive offers.
+                            </p>
+
+                        </div>
+
+
+                        <div class="about-use-card">
+
+                            <span>
+                                ◈
+                            </span>
+
+                            <h3>
+                                Conversion Actions
+                            </h3>
+
+                            <p>
+                                Use behavioral insights to identify opportunities
+                                for reducing friction and improving conversion.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ========================================= -->
+                <!-- FOOTER -->
+                <!-- ========================================= -->
+
+                <div class="about-footer">
+
+                    <p>
+                        Built with Python, Flask, Scikit-learn and SHAP.
+                    </p>
+
+                    <a href="/" class="about-back-button">
+                        ← Back to Prediction
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById("themeToggle");
+
+        function updateThemeButton() {
+            if (document.body.classList.contains("light-mode")) {
+                themeToggle.textContent = "☾";
+            } else {
+                themeToggle.textContent = "☀";
+            }
+        }
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme === "light") {
+            document.body.classList.add("light-mode");
+        } else {
+            document.body.classList.remove("light-mode");
+        }
+
+        // Update button icon
+        updateThemeButton();
+
+        // Toggle theme
+        themeToggle.addEventListener("click", function () {
+
+            document.body.classList.toggle("light-mode");
+
+            if (document.body.classList.contains("light-mode")) {
+                localStorage.setItem("theme", "light");
+            } else {
+                localStorage.setItem("theme", "dark");
+            }
+
+            updateThemeButton();
+        });
+    </script>
+</body>
+
+</html>
