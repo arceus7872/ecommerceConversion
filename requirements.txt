@@ -1,0 +1,7 @@
+Flask
+joblib
+pandas
+numpy
+scikit-learn==1.9.0
+shap
+gunicorn
